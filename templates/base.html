@@ -7,10 +7,11 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="/home/vasa/PycharmProjects/checker_project/progect/templates/style.css">
+    <link rel="stylesheet" href="static/style.css" />
     <title>
       {% block title %}
-      {% endblock %} | Flask app
+        PyCheck
+      {% endblock %}
     </title>
   </head>
   <body>
@@ -21,7 +22,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class='navbar-nav mr-auto '>
           <li class="nav-item active">
-            <a href="#" class="nav-link">Input code</a>
+            <a href="/checked_code" class="nav-link">Input code</a>
           </li>
           <li class="nav-item ">
             <a href="#" class="nav-link">Upload file</a>
@@ -40,6 +41,12 @@
       {% endblock %}
 
     </div>
+
+
+
+    <footer class="page-footer font-small blue">
+      <div class="footer-text text-center">© Test prot 2019</div>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

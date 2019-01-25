@@ -1,144 +1,7 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ace/1.2.8/ace.js"></script>
-    <title>PyCheck</title>
-    <style>
-
-    .navbar {
-    background-color: black;
-    }
-    .navbar a{
-      color: silver;
-    }
-    .navbar a:hover{
-      color: white;
-    }
-
-    .page-footer{
-      color:white;
-    }
-    footer{
-      background-color: black;
-    }
-    .nav li a {
-    position: relative;
-    display: block;
-    padding: 10px 15px;
-    }
-    a {
-    color: #blue;
-    text-decoration: none;
-    }
-    a {
-    background-color: transparent;
-    }
-    .nav-pills li a {
-    border-radius: 4px;
-    }
-
-    .nav-pills li a{
-      text-decoration:none;
-      color: black;
-      bottom: 30px;
-    }
-    .nav-pills li a:hover {
-     color: white;
-     background-color:black;
-    }
-    .nav-pills li a:active {
-     color: white;
-     background-color:black;
-    }
-
-    .body{
-      position: relative;
-    }
-
-    .check-box{
-        padding-left: 50px;
-        padding-top: 100px;
-        position: relative;
-      }
-      #comment{
-        width:800px;
-        height:340px;
-        position: relative;
-      }
-      .btn{
-        background-color: Silver;
-        margin-left: 350px;
-        margin-top: 30px;
-      }
-      .container-fluid {
-        padding-top: 30px;
-        padding-bottom: 40px;
-
-      }
-      button{
-        padding: 5px 7px;
-        background-color: black;
-        color: white;
-        border-radius: 8px;
-      }
-
-      #editor{
-        height: 340px;
-        width:790px;
-      }
-
-      .table{
-        color: black;
-        width: 80%;
-        text-align: center;
-      }
-
-      table {
-        width: 300px;
-        border: 1px solid;
-        margin: auto;
-      }
-
-      td {
-            text-align: center;
-          }
-      .window{
-        margin-left: 140px;
-      }
-
-    </style>
-  </head>
-  <body>
-
-    <nav class='navbar navbar-expand-lg'>
-      <a href="#" class="navbar-brand">PyCheck</a>
-      <button class="navbar-toggler" type="button" data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent'
-                                                area-expanded='false' aria-label='Toggle navigation'>
-      <span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class='navbar-nav mr-auto '>
-          <li class="nav-item active">
-            <a href="#" class="nav-link">Input code</a>
-          </li>
-          <li class="nav-item ">
-            <a href="#" class="nav-link">Upload file</a>
-          </li>
-          <li class="nav-item ">
-            <a href="#" class="nav-link">About</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+{% extends 'base.html' %}
 
 
+{% block content %}
 
 <div class="container-fluid">
   <div class="row">
@@ -175,6 +38,7 @@
 
       <script src="/static/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+       <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/ace/1.2.8/ace.js"></script>
       <script>
           var editor = ace.edit("editor");
           var textarea = document.getElementById('code');
@@ -192,68 +56,9 @@
               textarea.value = editor.getSession().getValue();
               document.forms['code_form'].submit();
 
-              // перевіряє чи вибраний бокс якщо вибраний робить дію
-            /*  var Flake8 = document.getElementById("Flake8");
-              var MyPy = document.getElementById("MyPy");
-              var PyDocStyle = document.getElementById("PyDocStyle");
-              var Coverage = document.getElementById("Coverage");
-              var text = document.getElementById("text");
-
-              if (Flake8.checked == true){
-                document.getElementById('Flake8').value = 'checked';
-              }
-              if (MyPy.checked == true){
-                text2.style.color="orange";
-              }
-              if (PyDocStyle.checked == true){
-                text3.style.color="green";
-              }
-              if (Coverage.checked == true){
-                text4.style.color="purple";
-              }*/
-
-
           }
-          /*  $(function() {
-           $('#btn_code').click(function() {
-               $.ajax({
-                   url: '/signUpUser',
-                   data: $('#code-form').serialize(),
-                   type: 'POST',
-                   success: function(response) {
-                       console.log(response);
-                   },
-                   error: function(error) {
-                       console.log(error);
-                   }
-               });
-           });
-      */
     </script>
     </div>
-      <!--<div class="col-md-3" >
-        <div class="check-box">
-          <h2>Chose libs</h2
-          <form >
-            <div class="checkbox">
-              <label><input type="checkbox" name='Flake8'>Flake8</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" name='MyPy' id="MyPy" value="MyPy">MyPy</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" name='PyDocStyle' id="PyDocStyle" value="PyDocStyle">PyDocStyle</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" name="Coverage" id="Coverage" value="Coverage">Coverage</label>
-            </div>
-            <p id="text1" style="color: yellow;" >Checkbox is CHECKED!</p>
-            <p id="text2" style="color: yellow;" >Checkbox is CHECKED!</p>
-            <p id="text3" style="color: yellow;" >Checkbox is CHECKED!</p>
-            <p id="text4" style="color: yellow;" >Checkbox is CHECKED!</p>
-          </form>
-        </div>
-    </div>-->
   </div>
 </div>
 <div class="pages-fluid ">
@@ -306,10 +111,8 @@
           </tr>
         </tbody>
       </table>
-<footer class="page-footer font-small blue">
-  <div class="footer-text text-center">© Test prot 2019</div>
-</footer>
 
+{% endblock %}
 
 
     <!-- Optional JavaScript -->

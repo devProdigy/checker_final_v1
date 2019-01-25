@@ -27,6 +27,5 @@ def coverage_checker():
     ps = subprocess.Popen(('coverage', 'run', 'code.txt'), stdout=subprocess.PIPE)
     output = subprocess.check_output(('coverage', 'report'), stdin=ps.stdout)
     ps.wait()
-    result = []
-    result.append(str(output))
+    result = [str(output)]
     return result
